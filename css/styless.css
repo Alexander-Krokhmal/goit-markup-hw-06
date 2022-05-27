@@ -564,6 +564,7 @@ textarea {
   justify-content: center;
 }
 .footer-signature-input {
+  display: inline-block;
   background-color: inherit;
   width: 358px;
   height: 50px;
@@ -791,7 +792,6 @@ textarea {
   left: 50%;
 
   width: 528px;
-  height: 581px;
 
   background-color: var(--main-bgc-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
@@ -820,13 +820,13 @@ textarea {
   cursor: pointer;
 }
 
-.close-icon {
-  transition: fill var(--duration) var(--timing-function);
+.modal-btn:hover .close-icon,
+.modal-btn:focus .close-icon {
+  fill: var(--accent-color);
 }
 
-.close-icon:hover,
-.close-icon:focus {
-  fill: var(--accent-color);
+.close-icon {
+  transition: fill var(--duration) var(--timing-function);
 }
 
 .form {
@@ -944,8 +944,7 @@ textarea {
   transition: border-color 1000ms var(--timing-function);
 }
 
-.form-checkbox:hover .checkbox-icon,
-.form-checkbox:focus .checkbox-icon {
+.form-checkbox:hover .checkbox-icon {
   border-color: var(--accent-color);
 }
 
@@ -969,11 +968,6 @@ textarea {
   transition: border-color var(--duration) var(--timing-function);
 }
 
-.checkbox-icon:hover,
-.checkbox-icon:focus {
-  border-color: var(--accent-color);
-}
-
 .checkbox:checked + .checkbox-icon {
   border-color: var(--accent-color);
   background-color: var(--accent-color);
@@ -981,6 +975,10 @@ textarea {
   background-size: contain;
   background-position: center;
   background-origin: border-box;
+}
+
+.checkbox:focus + .checkbox-icon {
+  border-color: var(--accent-color);
 }
 
 .checkbox-label {
